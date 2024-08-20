@@ -1,0 +1,39 @@
+.modal-dialog {
+  max-width: 1000px;
+  height: 100%;
+}
+.modal-header {
+  border-bottom: 0;
+}
+
+.modal-content {
+  padding: 20px;
+}
+.form-label {
+  font-size: 14px;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.Instruction {
+  color: rgb(0, 63, 15);
+}
+.paymentContainer {
+  b {
+    color: rgb(0, 93, 22);
+  }
+  input,
+  select:focus {
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+}
+@media screen and (max-width: 575px) {
+  .paymentRight {
+    margin-top: 30px;
+    text-align: center !important;
+  }
+}

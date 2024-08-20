@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./nav.css" />
+
+    <title>Nav</title>
+    <style>
+      /* Custom styles to hide/show search bar */
+    </style>
+  </head>
+  <body>
+    <div class="Nav">
+      <div class="container">
+        <div class="row">
+          <nav class="navbar navbar-expand-lg d-flex align-items-center">
+            <div class="nav-wrapper">
+              <div class="search-icon ms-3" id="searchIcon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+              <a class="navbar-brand" href="#"
+                ><img class="logo" src="./assets/anneshon.png" alt=""
+              /></a>
+              <button
+                class="navbar-toggler"
+                id="navbarToggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+            <div class="col-lg-3 searchBox" id="searchBox">
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  name="search"
+                  id="search"
+                  placeholder="Search ..."
+                  aria-label="Search"
+                  type="text"
+                />
+                <button type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+            </div>
+            <div class="col-lg-8">
+              <div
+                class="collapse navbar-collapse d-flex justify-content-end gap-3"
+                id="navbarSupportedContent"
+              >
+                <ul class="navbar-nav gap-4">
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle fs-5 fw-bold"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      কোর্সসমূহ
+                    </a>
+                    <ul
+                      class="dropdown-menu border-0"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">একাডেমিক</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#"
+                          >স্কিল ডেভেলপমেন্ট</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">ডুয়েট ভর্তি</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">জব প্রিপারেশন</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fs-5 fw-bold">লাইভ ব্যাচ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fs-5 fw-bold">ব্লগ</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a
+                      class="nav-link dropdown-toggle fs-5"
+                      href="#"
+                      id="navbarDropdown"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <i class="fa-solid me-2 fa-user-large"></i>username
+                    </a>
+                    <ul
+                      class="dropdown-menu border-0"
+                      aria-labelledby="navbarDropdown"
+                    >
+                      <li>
+                        <a class="dropdown-item fs-5" href="#"
+                          >আমার কোর্সসমূহ</a
+                        >
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">সার্টিফিকেট</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">একাউন্ট</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item fs-5" href="#">লগ আউট</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <!-- <div class="d-flex justify-content-end mt-3 mt-lg-0 btn-Groups">
+                  <a href="#" class="btn btn-primary me-2">Login</a>
+                  <a href="#" class="btn btn-outline-primary">Register</a>
+                </div> -->
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/js/bootstrap.bundle.min.js"></script>
+    <script src="./nav.js"></script>
+    <script>
+      document
+        .getElementById("searchIcon")
+        .addEventListener("click", function () {
+          var searchBox = document.getElementById("searchBox");
+          var searchIcon = document.getElementById("searchIcon");
+
+          // On small screens, show the search box and hide the search icon
+          if (window.innerWidth < 992) {
+            searchBox.style.display = "block";
+            searchIcon.style.display = "none";
+          }
+        });
+
+      document.addEventListener("click", function (event) {
+        var searchBox = document.getElementById("searchBox");
+        var searchIcon = document.getElementById("searchIcon");
+
+        if (
+          window.innerWidth < 992 &&
+          !searchBox.contains(event.target) &&
+          !searchIcon.contains(event.target)
+        ) {
+          searchBox.style.display = "none";
+          searchIcon.style.display = "block";
+        }
+      });
+
+      document
+        .querySelector(".navbar-toggler")
+        .addEventListener("click", function () {
+          var navbarCollapse = document.getElementById(
+            "navbarSupportedContent"
+          );
+          navbarCollapse.classList.toggle("show");
+        });
+
+      document.addEventListener("click", function (event) {
+        var navbarCollapse = document.getElementById("navbarSupportedContent");
+        var navbarToggler = document.querySelector(".navbar-toggler");
+
+        if (
+          !navbarCollapse.contains(event.target) &&
+          !navbarToggler.contains(event.target) &&
+          navbarCollapse.classList.contains("show")
+        ) {
+          navbarCollapse.classList.remove("show");
+        }
+      });
+
+      document
+        .getElementById("navbarToggler")
+        .addEventListener("click", function () {
+          var navbarCollapse = document.getElementById(
+            "navbarSupportedContent"
+          );
+          navbarCollapse.classList.toggle("show");
+          this.classList.toggle("cross");
+        });
+
+      document.addEventListener("click", function (event) {
+        var navbarCollapse = document.getElementById("navbarSupportedContent");
+        var navbarToggler = document.getElementById("navbarToggler");
+
+        if (
+          !navbarCollapse.contains(event.target) &&
+          !navbarToggler.contains(event.target) &&
+          navbarCollapse.classList.contains("show")
+        ) {
+          navbarCollapse.classList.remove("show");
+          navbarToggler.classList.remove("cross");
+        }
+      });
+    </script>
+
+    <div id="google_translate_element"></div>
+
+    <!-- to your js part -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
+</html>

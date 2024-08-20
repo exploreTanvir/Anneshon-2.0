@@ -1,0 +1,239 @@
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+a,
+.nav-link {
+  color: rgb(0, 1, 32);
+}
+.logo {
+  width: 5rem;
+  height: 5rem;
+}
+.dropdown-item {
+  border-radius: 5px;
+  padding: 0 10px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #e4f0fe;
+}
+.dropdown-menu {
+  box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.288);
+}
+
+.searchBox {
+  flex: 1;
+  position: relative;
+}
+.searchBox input {
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none !important;
+  background: f2f2f2;
+  border-radius: 30px;
+  color: gray;
+  font-size: 16px;
+}
+.searchBox input:focus {
+  outline: none !important;
+  border: 0;
+  box-shadow: none;
+}
+.navbar-toggler:focus {
+  outline: none !important;
+  border: 0;
+  box-shadow: none;
+}
+
+.searchBox button {
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 30px;
+  border: none;
+  position: absolute;
+  top: 0;
+  right: 0.7rem;
+  background: #357cff;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.searchBox button:hover {
+  background: #00596b;
+}
+.Nav {
+  background: #f0f8ff;
+}
+.navbar {
+  background: #f0f8ff;
+}
+.logo {
+  height: 4rem;
+  width: 4rem;
+}
+@media (max-width: 992px) {
+  .search-icon {
+    font-size: 1.5rem;
+  }
+  .btn-Groups {
+    justify-content: start !important;
+    display: block;
+  }
+  .nav-wrapper {
+    width: 100%;
+  }
+
+  .searchBox {
+    display: none;
+  }
+
+  .searchBox .d-flex {
+    display: flex !important;
+  }
+  .search-icon {
+    font-size: 1.5rem;
+  }
+
+  .searchBox {
+    display: none;
+  }
+
+  .searchBox.d-flex {
+    display: flex !important;
+  }
+
+  .navbar-collapse {
+    background-color: #f8f9fa; /* Add background color to navbar when expanded */
+    padding: 1rem;
+  }
+
+  .navbar-brand,
+  .search-icon,
+  .navbar-toggler {
+    display: inline-block;
+  }
+
+  /* Base styles for the navbar-toggler-icon */
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    display: block;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-toggler-icon::before,
+  .navbar-toggler-icon::after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar-toggler-icon::before {
+    top: -8px;
+  }
+
+  .navbar-toggler-icon::after {
+    top: 8px;
+  }
+
+  /* When the cross class is added */
+  .navbar-toggler.cross .navbar-toggler-icon {
+    background-color: transparent;
+  }
+
+  .navbar-toggler.cross .navbar-toggler-icon::before {
+    transform: rotate(45deg);
+    top: 0;
+  }
+
+  .navbar-toggler.cross .navbar-toggler-icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+
+  .navbar-nav,
+  .navbar-collapse {
+    width: 50%;
+  }
+
+  .navbar-collapse.collapse {
+    display: none !important;
+  }
+
+  .navbar-collapse.show {
+    display: block !important;
+  }
+}
+.searchBox {
+  display: none;
+}
+
+.search-icon {
+  display: block;
+}
+
+.navbar-brand {
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .searchBox {
+    display: block !important;
+  }
+  .search-icon {
+    display: none !important;
+  }
+  .navbar-brand {
+    width: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-brand {
+    order: 2;
+  }
+
+  .search-icon {
+    order: 1;
+  }
+
+  .navbar-toggler {
+    order: 3;
+  }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 56px; /* Adjust this to match your navbar height */
+    right: -100%;
+    width: 250px;
+    height: calc(100% - 56px); /* Adjust to match the navbar height */
+    background-color: #fff;
+    transition: right 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+    height: 18rem;
+    background: #ecf8ff;
+  }
+}
